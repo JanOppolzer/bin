@@ -11,13 +11,13 @@ fi
 STAGE4="/srv/backup/$(hostname -f)/$(hostname -s)-stage4-$(date +%Y%m%d-%H%M%S).tar.gz"
 
 EXCLUDES="\
+--exclude=/$(hostname -s)/* \
 --exclude=/dev/* \
 --exclude=/home/* \
 --exclude=/media/* \
 --exclude=/mnt/* \
 --exclude=/proc/* \
 --exclude=/run/* \
---exclude=/snotra/* \
 --exclude=/srv/* \
 --exclude=/sys/* \
 --exclude=/tmp/* \
