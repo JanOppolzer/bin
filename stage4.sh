@@ -22,8 +22,10 @@ EXCLUDES="\
 --exclude=/sys/* \
 --exclude=/tmp/* \
 --exclude=/usr/portage/* \
---exclude=/var/tmp/portage/* \
 --exclude=/var/lib/docker/* \
+--exclude=/var/lib/libvirt/* \
+--exclude=/var/lib/lxd/* \
+--exclude=/var/tmp/portage/* \
 --exclude=$STAGE4"
 
 sudo tar $EXCLUDES -czpf $STAGE4 /
