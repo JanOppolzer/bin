@@ -13,6 +13,7 @@ STAGE4="/srv/backup/$(hostname -f)/$(hostname -s)-stage4-$(date +%Y%m%d-%H%M%S).
 EXCLUDES="\
 --exclude=/$(hostname -s)/* \
 --exclude=/dev/* \
+--exclude=/data/* \
 --exclude=/home/* \
 --exclude=/media/* \
 --exclude=/mnt/* \
