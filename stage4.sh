@@ -14,6 +14,7 @@ EXCLUDES="\
 --exclude=/$(hostname -s)/* \
 --exclude=/dev/* \
 --exclude=/data/* \
+--exclude=/export/* \
 --exclude=/home/* \
 --exclude=/media/* \
 --exclude=/mnt/* \
