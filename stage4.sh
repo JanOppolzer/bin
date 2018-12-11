@@ -12,6 +12,16 @@ STAGE4="/srv/backup/$(hostname -f)/$(hostname -s)-stage4-$(date +%Y%m%d-%H%M%S).
 
 EXCLUDES="\
 --exclude=/$(hostname -s)/* \
+--exclude=/chroot/*/dev/* \
+--exclude=/chroot/*/home/* \
+--exclude=/chroot/*/media/* \
+--exclude=/chroot/*/mnt/* \
+--exclude=/chroot/*/proc/* \
+--exclude=/chroot/*/run/* \
+--exclude=/chroot/*/sys/* \
+--exclude=/chroot/*/tmp/* \
+--exclude=/chroot/*/usr/portage/* \
+--exclude=/chroot/*/var/tmp/portage/* \
 --exclude=/dev/* \
 --exclude=/data/* \
 --exclude=/export/* \
