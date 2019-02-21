@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if ! [[ "$(hostname -s)" =~ ^(snotra|sigyn|sjofn)$ ]]; then
+if ! [[ "$(hostname -s)" =~ ^(snotra|sigyn|sjofn|helreginn)$ ]]; then
     echo "Not at this host."
     exit 1
 fi
