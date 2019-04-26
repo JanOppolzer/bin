@@ -2,7 +2,7 @@
 
 INPUT=${1}
 EXTENSION=${INPUT##*.}
-DIR=~/Projects/metadata/eduid.cz/svn/
+DIR=~/Projects/metadata/eduid.cz/git/
 
 if [ -z ${INPUT} ]; then
     echo "A metadata file missing."
@@ -12,7 +12,7 @@ elif [ ! -f ${INPUT} ]; then
     exit 1
 fi
 
-ENTITYID=$(sed -n 's/.*entityID="\([a-zA-Z:/.]*\)".*/\1/p' ${INPUT})
+ENTITYID=$(sed -n 's/.*entityID="\([a-zA-Z0-9:/.]*\)".*/\1/p' ${INPUT})
 
 ENTITYIDNOPREFIX=${ENTITYID##*://}
 OUTPUT=${ENTITYIDNOPREFIX////%2F}.xml
