@@ -12,7 +12,7 @@ elif [ ! -f ${INPUT} ]; then
     exit 1
 fi
 
-ENTITYID=$(sed -n 's/.*entityID="\([a-zA-Z0-9:/.]*\)".*/\1/p' ${INPUT})
+ENTITYID=$(sed -n 's/.*entityID="\([a-zA-Z0-9:/.\-]*\)".*/\1/p' ${INPUT})
 
 ENTITYIDNOPREFIX=${ENTITYID##*://}
 OUTPUT=${ENTITYIDNOPREFIX////%2F}.xml
