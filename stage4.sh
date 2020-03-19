@@ -8,7 +8,7 @@ fi
 # exclude the following when cloning:
 # - /etc/ssh/ssh_host_*
 
-STAGE4="/srv/backup/$(hostname -f)/$(hostname -s)-stage4-$(date +%Y%m%d-%H%M%S).tar.gz"
+STAGE4="/srv/backup/$(hostname -f)/$(hostname -s)-stage4-$(date +%Y%m%d-%H%M%S).tar.zst"
 
 EXCLUDES="\
 --exclude=/$(hostname -s)/* \
@@ -40,7 +40,7 @@ EXCLUDES="\
 --exclude=/var/tmp/portage/* \
 --exclude=$STAGE4"
 
-sudo tar $EXCLUDES -czpf $STAGE4 /
+sudo tar $EXCLUDES -capf $STAGE4 /
 sha256sum $STAGE4 >> $STAGE4.sha256
 
 gpg2 -u 6B78BA37143C14C3A9699485DBF935FB5101AA6C --output $STAGE4.gpg --recipient jan@oppolzer.cz --encrypt --sign $STAGE4
