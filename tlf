@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 
-ldapsearch -vvv \
-    -H ldaps://ldap.cesnet.cz:636 \
-    -D 'uid=jop,ou=people,dc=cesnet,dc=cz' -W \
-    -b "ou=People,dc=cesnet,dc=cz" "(|(uid=*$1*)(cn=*$1*))" \
+ldapsearch -x \
+    -H ldaps://ldap.cesnet.cz \
+    -b "ou=People,dc=cesnet,dc=cz" \
+    -D 'uid=jop,ou=people,dc=cesnet,dc=cz' \
+    -W \
+    "(|(uid=*$1*)(cn=*$1*))" \
     cn\;lang-en mail preferedMail authorisedMail telephonenumber mobile ipphone \
     | grep -v \# \
     | grep -v "^$" \
